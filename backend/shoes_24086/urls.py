@@ -34,6 +34,7 @@ urlpatterns = [
     path("rest-auth/registration/", include("rest_auth.registration.urls")),
     path("home/", include("home.urls")),
     path("api/v1/", include("storeapp.api.v1.urls")),
+    path("storeapp/", include("storeapp.urls")),
 ]
 
 admin.site.site_header = "Shoes"
