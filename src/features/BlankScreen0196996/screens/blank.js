@@ -1,4 +1,5 @@
-import React from "react";
+import { connect } from "react-redux"
+import React from "react"
 import {
   View,
   Image,
@@ -10,32 +11,97 @@ import {
   TextInput,
   StyleSheet,
   ScrollView
-} from "react-native";
-import DateTimePicker from 'react-native-datepicker';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Slider from '@react-native-community/slider';
-import { CheckBox } from 'react-native-elements';
-import {SlideMenuIcon} from '../../../navigator/slideMenuIcon';
+} from "react-native"
+import DateTimePicker from "react-native-datepicker"
+import Icon from "react-native-vector-icons/FontAwesome"
+import Slider from "@react-native-community/slider"
+import { CheckBox } from "react-native-elements"
+import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
-export default class Blank extends React.Component {
-  static navigationOptions = ({navigation}) => {
-    return {
-      headerLeft: <SlideMenuIcon navigationProps={navigation} />,
-    };
-  };
-  
-  state = {};
+class Blank extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { TextInput_97: "" }
+  }
+  static navigationOptions = ({ navigation }) => {
+    return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
+  }
 
   render = () => (
-    <View style={styles.container}>
-      <Text>This is your new component</Text>
+    <View>
+      <View style={styles.View_3}>
+        <Image
+          source={{
+            uri:
+              "https://d3tklmlrp1a8c2.cloudfront.net/media/resources/project/24086/96934db2-726c-490d-b2a9-b07381e57516.jpg"
+          }}
+          style={styles.Image_95}
+        />
+      </View>
+      <TextInput
+        placeholder="Type an item to search"
+        style={styles.TextInput_97}
+        value={this.state.TextInput_97}
+        onChangeText={nextValue => this.setState({ TextInput_97: nextValue })}
+      />
+      <View style={styles.View_101}>
+        <View style={styles.View_102}>
+          <Image
+            source={{
+              uri:
+                "https://d3tklmlrp1a8c2.cloudfront.net/media/resources/project/24086/24ddb62f-f45c-41ab-ba32-b05f67495a80.jpg"
+            }}
+            style={styles.Image_105}
+          />
+          <Text style={styles.Text_109}>Product 1</Text>
+        </View>
+        <View style={styles.View_103}>
+          <Image
+            source={{
+              uri:
+                "https://d3tklmlrp1a8c2.cloudfront.net/media/resources/project/24086/24ddb62f-f45c-41ab-ba32-b05f67495a80.jpg"
+            }}
+            style={styles.Image_107}
+          />
+          <Text style={styles.Text_114}>Product 2</Text>
+        </View>
+      </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 16,
+  View_1: {},
+  View_3: { width: "100%", height: 200, alignItems: "center" },
+  Image_95: { width: 800, paddingRight: 500 },
+  TextInput_97: { marginBottom: 10, paddingBottom: 15 },
+  View_101: {
+    width: 280,
+    alignSelf: "center",
+    flexDirection: "row",
+    justifyContent: "center"
   },
-});
+  View_102: {
+    width: 140,
+    height: 420,
+    alignSelf: "center",
+    alignItems: "center"
+  },
+  Image_105: { width: 130, height: 130, alignSelf: "center" },
+  Text_109: { alignSelf: "center", fontSize: 16, fontFamily: "Roboto-Bold" },
+  View_103: {
+    width: 140,
+    height: 420,
+    alignSelf: "center",
+    alignItems: "center"
+  },
+  Image_107: { width: 130, height: 130, alignSelf: "center" },
+  Text_114: { alignSelf: "center", fontSize: 16, fontFamily: "Roboto-Bold" }
+})
+const mapStateToProps = state => {
+  return {}
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Blank)
