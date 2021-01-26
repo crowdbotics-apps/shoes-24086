@@ -21,6 +21,7 @@ import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 class Blank extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = { TextInput_97: "" }
   }
   static navigationOptions = ({ navigation }) => {
@@ -54,6 +55,7 @@ class Blank extends React.Component {
             style={styles.Image_105}
           />
           <Text style={styles.Text_109}>Product 1</Text>
+          <Text style={styles.Text_118}>$299</Text>
         </View>
         <View style={styles.View_103}>
           <Image
@@ -64,6 +66,7 @@ class Blank extends React.Component {
             style={styles.Image_107}
           />
           <Text style={styles.Text_114}>Product 2</Text>
+          <Text style={styles.Text_121}>$199</Text>
         </View>
       </View>
     </View>
@@ -88,7 +91,25 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   Image_105: { width: 130, height: 130, alignSelf: "center" },
-  Text_109: { alignSelf: "center", fontSize: 16, fontFamily: "Roboto-Bold" },
+  Text_109: {
+    width: 130,
+    alignSelf: "center",
+    fontSize: 16,
+    fontFamily: "Roboto-Bold",
+    textAlign: "center",
+    lineHeight: 20,
+    letterSpacing: 2
+  },
+  Text_118: {
+    width: 130,
+    alignSelf: "center",
+    fontSize: 16,
+    color: "#64e6e8",
+    fontFamily: "OpenSans-Bold",
+    textAlign: "center",
+    lineHeight: 20,
+    letterSpacing: 2
+  },
   View_103: {
     width: 140,
     height: 420,
@@ -96,12 +117,32 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   Image_107: { width: 130, height: 130, alignSelf: "center" },
-  Text_114: { alignSelf: "center", fontSize: 16, fontFamily: "Roboto-Bold" }
+  Text_114: {
+    width: 130,
+    alignSelf: "center",
+    fontSize: 16,
+    fontFamily: "Roboto-Bold",
+    textAlign: "center",
+    lineHeight: 20,
+    letterSpacing: 2
+  },
+  Text_121: {
+    width: 130,
+    fontSize: 16,
+    color: "#64e6e8",
+    fontFamily: "OpenSans-Bold",
+    textAlign: "center",
+    lineHeight: 20,
+    letterSpacing: 2
+  }
 })
+
 const mapStateToProps = state => {
   return {}
 }
+
 const mapDispatchToProps = () => {
   return {}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Blank)
