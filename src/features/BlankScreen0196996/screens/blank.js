@@ -77,7 +77,7 @@ class Blank extends React.Component {
             title="View More"
             color="#ffffff"
             style={styles.Button_127}
-            onPress={() => alert("Pressed!")}
+            onPress={() => this.props.navigation.navigate("BlankScreen1197010")}
           />
         </View>
       </View>
