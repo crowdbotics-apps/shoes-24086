@@ -59,7 +59,7 @@ class Blank extends React.Component {
           <Button
             title="View More"
             color="#ffffff"
-            style={styles.Button_124}
+            style={styles.Button_138}
             onPress={() => alert("Pressed!")}
           />
         </View>
@@ -122,12 +122,12 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     letterSpacing: 2
   },
-  Button_124: {
+  Button_138: {
     alignSelf: "center",
     fontSize: 16,
     color: "#ff0000",
     fontWeight: "bold",
-    borderColor: "#00f000",
+    borderColor: "#00ff08",
     borderWidth: 2,
     borderLeftWidth: 2,
     borderRightWidth: 2,
